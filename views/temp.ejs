@@ -1,0 +1,76 @@
+<%- include('partials/header.ejs') %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/public/assets/app.css">
+<div class="container">
+<div class="row">
+	<div class="col-md-3">
+		
+	<p>
+		NaturesGram
+		</p>
+		<div class="list-group">
+			<li class="list-group-item active">Info 1</li>
+			<li class="list-group-item ">Info 2</li>
+			<li class="list-group-item ">Info 3</li>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="thumbnail">
+			<img class="img-responsive" src="<%= campgrounds.image%>">
+			<div class="caption-full">
+				
+				<a><h4>
+	<%= campgrounds.name %>
+					</h4></a>
+			</div>
+			<p>
+		<%= campgrounds.description %>
+</p>
+		<p>
+			Submitted By - <strong><%=campgrounds.author.username%></strong>
+			</p>
+			
+			<p>
+				<a class=" btn btn-warning"href="/campgrounds/<%=campgrounds._id%>/edit">EDIT</a>
+			</p>
+			<p>
+				<form id="ert" action="/campgrounds/<%=campgrounds._id%>?_method=DELETE" method="POST">
+					<button class="btn btn-danger">
+						Delete
+					</button>
+			</form>
+			</p>
+		</div>
+		<div class="well">
+			<div class="text-right">
+				<a  class="btn btn-success" href="/campgrounds/<%=campgrounds._id%>/comments/new">Add new Comment</a>
+			</div>
+            <hr>			
+			<% campgrounds.comments.forEach(function(comment){%>
+			<div class="row">
+			<div class="col-md-12">
+				<strong> <%=comment.author.username%></strong>
+			<span class="pull-right">Just Now</span>
+				<p>
+					
+			<%=comment.text%>
+				</p>
+
+	
+		
+	<%})%>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>	
+	
+</div>
+
+	
+	
+
+
+
+
+<%- include('partials/footer.ejs')%>

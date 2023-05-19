@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/css/bootstrap.min.css">
+<h1>
+	Login page
+</h1>
+<form action="/login" method="POST">
+	<input type="text" name="username" placeholder="username">
+	<input type="password" name="password" placeholder="password">
+	<button>
+		Login 
+	</button>
+
+</form>
+<%- include('partials/footer.ejs') %>

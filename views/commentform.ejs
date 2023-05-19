@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/css/bootstrap.min.css">
+<div class="container">
+<h1 style="text-align:center">
+	Add a new Comment to this image
+</h1>
+
+	<div style="width:40%;margin: 25px auto;">
+<form action="/campgrounds/<%=campground._id%>/comments" method="POST">
+
+	<div class="form-group">
+		<input type="text" class="form-control" name="imp4" placeholder="text">
+	</div>
+	
+	<div>
+	<div class="form-group">
+		<button class="btn btn-primary btn-md btn-block">
+			 Submit
+	</button>
+		</div>
+		</form>
+		
+
+		<a href="/campgrounds">Go Back</a>
+	</div>
+</div>
+<%- include('partials/footer.ejs') %>
